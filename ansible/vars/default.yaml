@@ -108,6 +108,9 @@ osp_controller_storage_class: host-nfs-storageclass
 osp_interface: enp6s0
 osp_container_tag: 16.2_20210215.1
 
+# use kubvirt vms as virtual compute nodes (default false)
+osp_virtual_compute: false
+
 # number of OCP worker nodes should be OSP compute hosts
 osp_compute_count: 1
 
