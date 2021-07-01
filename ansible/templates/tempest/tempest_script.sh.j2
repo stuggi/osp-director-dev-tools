@@ -39,11 +39,13 @@ $TEMPESTCONF \
 
 tempest cleanup --init-saved-state
 
-if [ -f "/var/lib/tempest/whitelist_file" ]; then
-  tempest run --whitelist-file /var/lib/tempest/whitelist_file
-else
+if [ "$SMOKETEST" = true ]; then
   # Run for example smoke tests
   tempest run --smoke
+else
+  tempest run --subunit --regex "{{ tempest_test_dict.regex }}" \
+    --include-list /var/lib/tempest/include_file \
+    --exclude-list /var/lib/tempest/exclude_file
 fi
 
 tempest cleanup
