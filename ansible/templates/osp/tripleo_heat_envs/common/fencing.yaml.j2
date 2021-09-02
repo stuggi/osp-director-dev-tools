@@ -7,7 +7,6 @@ parameter_defaults:
       - agent: fence_kubevirt
         host_mac: {{ ctrl_vm_macs.stdout_lines[loop.index-1] }}
         params:
-          action: reboot
           plug: {{ vm_name }}
           namespace: openstack
           ssl_insecure: true
