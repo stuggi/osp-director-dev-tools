@@ -84,3 +84,8 @@ tempest_enable_feature_dict:
     block_migration_for_live_migration: true
     volume_backed_live_migration: true
     console_output: true
+
+tempest_disable_feature_dict:
+  network:
+    # remove public network from floating_network_name as IPv6 only is used for external network
+    floating_network_name: public
