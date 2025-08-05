@@ -15,7 +15,7 @@ spec:
   virtualMachineRoles:
 {% for name, role in osp.vmset.items() %}
 {% if role.count > 0 %}
-    {{ name }}:
+    foo:
       roleName: {{ name }}
       roleCount: {{ role.count }}
       networks:
