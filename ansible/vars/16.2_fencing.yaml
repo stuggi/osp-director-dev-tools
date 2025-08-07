@@ -1,6 +1,12 @@
 ---
 enable_fencing: true
 
+ocp_master_memory: 40000
+ocp_master_vcpu: 12
+ocp_master_disk: 100
+ocp_num_workers: 0
+ocp_worker_memory: 20000
+
 osp_release_defaults:
   vmset:
     Controller:
