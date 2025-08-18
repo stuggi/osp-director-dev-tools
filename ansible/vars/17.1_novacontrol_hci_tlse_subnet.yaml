@@ -8,6 +8,12 @@ openstackclient_networks:
   - internal_api
   - internal_api_leaf1
 
+ocp_master_memory: 50000
+ocp_master_vcpu: 12
+ocp_num_workers: 0
+ocp_worker_memory: 20000
+ocp_worker_disk: 20
+
 enable_freeipa: true
 osp_release_defaults:
   base_image_url:
@@ -21,7 +27,7 @@ osp_release_defaults:
     CtlNovaStdalone:
       count: 1
       cores: 6
-      memory: 20
+      memory: 30
       networks:
         - ctlplane
         - internal_api
@@ -37,7 +43,7 @@ osp_release_defaults:
     Novacontrol:
       count: 1
       cores: 2
-      memory: 10
+      memory: 15
       networks:
         - ctlplane
         - internal_api
